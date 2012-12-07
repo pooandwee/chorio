@@ -5,7 +5,7 @@
 	<div class="well">
 	 	  <%= image_tag @child.image_url(:thumb), class: "feature" %>
 		  <span id="child_name"><%= @child.name %></span>
-	    aged: <%= @child.dob %> |
+	    aged: <%= @child.age %>   |
 	    <%= link_to (image_tag 'edit_16.png'), edit_child_path(@child) %> 
 	    <span id="child_bank"><b>Bank:</b> <%= @child.bank %> Pts</span>  
 	</div>
@@ -17,7 +17,7 @@
 			  <h4>Chores</h4>
 				<ul class="incomplete">
 					<% @child.chores.incomplete.each do |chore| %>          
-					  <li><%= chore.name %>, <%= chore.points %>pts, <%= chore.due_date.strftime("due: %A") %> - <span class="admin"><%= link_to "Done", complete_chore_path(@child.id, chore.id) %><%= link_to (image_tag'1354409256_delete.png'), delete_chore_path(@child.id, chore.id) %></span></li>
+					  <li><%= chore.name %>, <%= chore.points %>pts, <%= chore.due_date.strftime("due: %A") %> - <span class="admin"><%= link_to image_tag("tick.png"), complete_chore_path(@child.id, chore.id) %><%= link_to (image_tag'1354409256_delete.png'), delete_chore_path(@child.id, chore.id) %></span></li>
 			  	<% end %>
 				</ul>
 		
@@ -29,7 +29,9 @@
 
 				<%= form_for [@child, @child.chores.new] do |f| %>
 				  <%= f.text_field :name, placeholder: 'describe chore...' %> 
-					<%= f.number_field :points, placeholder: 'points...' %> 
+				  <%= f.select :name, options_for_select([["common chores...", "cc"],["lay the table", "lay the table"], ["read your homework book", "read your homework book"], ["tidy your room", "tidy your room"],["pick up your toys", "pick up your toys"],["phonics homework", "phonics homework"],["sweep the floor", "sweep the floor"],["clean the table", "clean the table"],["brush your teeth", "brush your teeth"]] ) %>
+					
+					<%= f.select :points, options_for_select([["points...", "points"],["5", "5"], ["10", "10"], ["20", "20"],["30", "30"],["40", "40"],["50", "50"],["75", "75"],["100", "100"]] ) %>
 					<%= f.text_field :due_date, placeholder: 'due date...' %>
 				  <%= f.submit %>
 				<% end %>

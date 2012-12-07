@@ -3,6 +3,7 @@ class Child < ActiveRecord::Base
   
   before_save :calculate_bank
   before_save :running_total
+  before_save :age
   
   validates :name, presence: true
   
@@ -27,7 +28,7 @@ class Child < ActiveRecord::Base
   
   def calculate_bank
     # reset the score to zero
-    b = 0
+    b=0
 
     # for each chore where it's completed, loop over each chore
     # and add it to variable b
@@ -42,9 +43,16 @@ class Child < ActiveRecord::Base
     self.bank = b
   end
   
+  
+  # theres prolly some sort of regex thing that deals with all
+  # the things like leap years etc. have a look
   def age
-     now = Time.now.utc.to_date
-     now.year - birthday.year - (birthday.to_date.change(:year => now.year) > now ? 1 : 0)
+    current_year = Time.now.year
+    birthday_year = self.dob.year
+    self.age = current_year - birthday_year
   end
+  
+  
+ 
   
 end

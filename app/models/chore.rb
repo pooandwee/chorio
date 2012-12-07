@@ -3,7 +3,7 @@ class Chore < ActiveRecord::Base
   
 
   # sort out flash message for validations
-  validates :name, presence: true
+  # validates :name, presence: true
   validates :points, presence: true
   validates :due_date, presence: true
 

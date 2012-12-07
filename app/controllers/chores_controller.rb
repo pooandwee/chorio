@@ -29,7 +29,12 @@ class ChoresController < ApplicationController
   # GET /chores/new.json
   def new
     @chore = Chore.new
-
+    @ratings = {
+          "G" => "General Admission",
+          "PG" => "Parental Guidance",
+          "R" => "Restricted",
+          "X" => "Adults Only"
+    }
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @chore }

@@ -6,7 +6,7 @@
  <div class="well">
 	  <%= image_tag (child.image_url(:thumb)), class: "feature" %>
     <%= link_to child.name, child_path(child) %>
-    <%= child.dob %>
+    <%= child.age %> years old
     <span class="admin">
     <%= link_to (image_tag 'edit_16.png'), edit_child_path(child) %>
     <%= link_to (image_tag'1354409256_delete.png'), child, method: :delete, data: { confirm: 'Are you sure?' } %>
