@@ -1,0 +1,24 @@
+<div class="hero-unit">
+	<h3>Children</h3>
+
+	
+<% @children.each do |child| %>
+ <div class="well">
+	  <%= image_tag (child.image_url(:thumb)), class: "feature" %>
+    <%= link_to child.name, child_path(child) %>
+    <%= child.dob %>
+    <span class="admin">
+    <%= link_to (image_tag 'edit_16.png'), edit_child_path(child) %>
+    <%= link_to (image_tag'1354409256_delete.png'), child, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </span>
+   <span id="child_bank">Current bank: <%= child.bank %></span>
+   <%= child.total %>
+ </div>  
+<% end %>
+
+	<div class="well"><%= link_to 'Add Child', new_child_path %></div>
+
+
+</div>
+
+

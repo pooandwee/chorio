@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  points: 1
+  completed: false
+  child_id: 1
+  due_date: 2012-12-01
+
+two:
+  name: MyString
+  points: 1
+  completed: false
+  child_id: 1
+  due_date: 2012-12-01

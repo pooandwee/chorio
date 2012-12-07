@@ -1,0 +1,90 @@
+// Place all the styles related to the Chores controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h2 {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+.tasks .admin {
+	display: none;
+}
+
+.tasks.hover .admin {
+	display: inline;
+}
+
+
+.edit_task {
+  a {
+    color: #999;
+    font-size: 12px;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+.hero-unit {
+	margin-top: 20px;
+	background: #fff;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px
+}
+
+label{
+	display: inline;
+}
+
+<!-- .chore{
+  display: inline;
+} -->
+
+.form_for_chore{
+  li{
+	  padding: 0px;
+  }
+}
+
+h2 {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+#incomplete_tasks form {
+
+  margin: 0px 0;
+   &:hover { background: #F0F7FC; }
+   border-bottom: 1px solid #eee;
+   li {display:inline}
+
+}
+
+#complete_tasks form {
+	margin: 10px 0;
+  font-size: 14px;
+  color: #ccc;
+   border-bottom: 1px solid #eee;
+  margin: 0px 0;
+  label { text-decoration: line-through; }
+   &:hover { background: #F0F7FC; }
+}
+
+
+.edit_chore {
+	padding: 20px;
+  a {
+    color: #999;
+    font-size: 10px;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+ 

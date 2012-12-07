@@ -1,0 +1,31 @@
+<h1>Listing chores</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Points</th>
+    <th>Completed</th>
+    <th>Child</th>
+    <th>Due date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @chores.each do |chore| %>
+  <tr>
+    <td><%= chore.name %></td>
+    <td><%= chore.points %></td>
+    <td><%= chore.completed %></td>
+    <td><%= chore.child_id %></td>
+    <td><%= chore.due_date %></td>
+    <td><%= link_to 'Show', chore %></td>
+    <td><%= link_to 'Edit', edit_chore_path(chore) %></td>
+    <td><%= link_to 'Destroy', chore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Chore', new_chore_path %>

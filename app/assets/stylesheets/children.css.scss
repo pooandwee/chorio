@@ -1,0 +1,64 @@
+// Place all the styles related to the Children controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+span#child_name{
+	font-size: 50px;
+	padding: 20px;
+	color: #666;
+}
+
+span#done_button {
+	background: red;
+}
+
+span#child_bank{
+	float:right;
+	font-size: 30px;
+	color: #666
+}
+
+ul.completed { 
+  color: #ccc;
+  text-decoration: line-through; 
+  border-bottom: 1px solid #eee;
+  
+}
+
+ul.completed li  {
+	border-bottom: 1px solid #eee;
+	 &:hover { background: #e0F7FC; }
+}
+
+ul.incomplete li span.admin
+
+ul.incomplete li  {
+	border-bottom: 1px solid #eee;
+	 &:hover { background: #e0F7FC; }
+}
+
+
+
+
+
+
+ul.incomplete li.hover span.admin {
+	display: inline;
+}
+
+.feature {
+	border: 3px solid #fff;
+	border-radius: 5px;
+	box-shadow: 0px 0px 0px 1px #bcbcbc;
+	
+
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-ms-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;	
+}
+
+.feature img.thumb:hover {
+	box-shadow: 0px 0px 10px 0px #8cbe5b;
+}
