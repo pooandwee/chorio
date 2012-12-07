@@ -1,7 +1,7 @@
 class ChoresController < ApplicationController
   
   attr_accessor :completed
-  before_filter :authenticate_user!
+  
   
   # GET /chores
   # GET /chores.json

@@ -1,7 +1,7 @@
 class RewardsController < ApplicationController
   
   attr_accessor :rewarded
-  before_filter :authenticate_user!
+  
   
   # GET /rewards
   # GET /rewards.json
